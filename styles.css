@@ -1,0 +1,21 @@
+:root {
+    /* colors */
+    --main-color: rgba(221, 221, 221, 0.417);
+    /* navigation bar colors */
+    --nav-background: #333;
+    --nav-buttons: white;
+}
+
+/* body styling */
+body {
+    width: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--main-color);
+}
+/* Navigation bar Section */
+/* Welcome Section */
+/* Projects Section */
+/* Contacts Section */A
+/* Footer section */
