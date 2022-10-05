@@ -6,16 +6,32 @@
     --nav-buttons: white;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 /* body styling */
 body {
-    width: 0 auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: var(--main-color);
 }
 /* Navigation bar Section */
+#navbar{
+    width: 100%;
+    height: 1.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 1em;
+    margin-top: -0.5em;
+    margin-left: -1em;
+    position: fixed;
+    background-color: var(--nav-background);
+}
 /* Welcome Section */
 /* Projects Section */
-/* Contacts Section */A
+/* Contacts Section */
 /* Footer section */
