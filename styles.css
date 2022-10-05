@@ -21,16 +21,25 @@ body {
 /* Navigation bar Section */
 #navbar{
     width: 100%;
-    height: 1.5em;
+    height: 2em;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    align-items: center;
     gap: 1em;
     margin-top: -0.5em;
     margin-left: -1em;
     position: fixed;
     background-color: var(--nav-background);
 }
+#navbar a {
+    font-size: 1.5em;
+    padding-right: 1em;
+    text-decoration: none;
+    color: var(--nav-buttons);
+}
+
+
 /* Welcome Section */
 /* Projects Section */
 /* Contacts Section */
