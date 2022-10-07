@@ -1,21 +1,13 @@
 import getRepos from "./getRepos.js";
 
 function createListElement(repo) {
-    const projectTile = document.createElement('div');
-    const projectTitle = document.createElement('h5');
     const projectLink = document.createElement('a');
-
-    projectTile.classList.add('project-card');
-    projectTitle.classList.add('project-title');
-    projectTitle.textContent = repo.full_name;
-    projectLink.href = repo.full_name;
-    projectLink.textContent = 'Open in GitHub';
-    projectLink.classList.add('project-link');
+    const projectName = repo.full_name.split('/')[1];
+    projectLink.href = repo.html_url;
+    projectLink.classList.add('project-card');
+    projectLink.textContent = projectName;
     
-    projectTile.appendChild(projectTitle);
-    projectTile.appendChild(projectLink);
-    
-    return projectTile;
+    return projectLink;
 }
 
 async function loadRepos() {
