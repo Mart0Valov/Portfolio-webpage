@@ -1,15 +1,13 @@
 :root {
     /* colors */
-    --main-color: rgba(221, 221, 221, 0.417);
+    --main-color: rgba(193, 192, 192, 0.355);
     /* navigation bar colors */
     --nav-background: #333;
     --nav-buttons: white;
-    --background-color: background: linear-gradient(
-        90deg,
-        var(--main-color),
-        rgb(216, 194, 252),
-        rgb(111, 111, 111)
-    );
+    --background-theme: linear-gradient(360deg,
+            var(--main-color),
+            rgb(216, 194, 252),
+            rgb(51, 51, 51));
     --shadow-color: rgba(165, 165, 165, 0.888);
     --pinky-color: rgb(255, 0, 102);
 }
@@ -20,24 +18,25 @@
 
 /* body styling */
 body {
-    width: 100vw auto;
+    width: 0 auto;
+    margin: 0;
     background-color: var(--main-color);
 }
 
 /* Navigation bar Section */
-#navbar{
-    width: 100vw;
+#navbar {
+    width: 100%;
     height: 2em;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
     gap: 1em;
-    margin-top: -0.5em;
-    padding-right: 1em;
+    padding: 1.3em;
     position: fixed;
     background-color: var(--nav-background);
 }
+
 #navbar a {
     font-size: 1.5em;
     padding-right: 1em;
@@ -45,31 +44,64 @@ body {
     text-decoration: none;
     color: var(--nav-buttons);
 }
+
 @keyframes navButtonsHover {
-    0% {box-shadow: -1px 1px 1.5px 0px var(--pinky-color);}
-    25% {box-shadow: -2px 2px 1.5px 0px var(--pinky-color);}
-    50% {box-shadow: -3px 3px 1.5px 0px var(--pinky-color);}
-    75% {box-shadow: -4px 4px 1.5px 0px var(--pinky-color);}
-    100% {box-shadow: -5px 5px 1.5px 0px var(--pinky-color);}
+    0% {
+        box-shadow: -1px 1px 1.5px 0px var(--pinky-color);
+    }
+
+    25% {
+        box-shadow: -2px 2px 1.5px 0px var(--pinky-color);
+    }
+
+    50% {
+        box-shadow: -3px 3px 1.5px 0px var(--pinky-color);
+    }
+
+    75% {
+        box-shadow: -4px 4px 1.5px 0px var(--pinky-color);
+    }
+
+    100% {
+        box-shadow: -5px 5px 1.5px 0px var(--pinky-color);
+    }
 }
+
 #navbar a:hover {
     animation-name: navButtonsHover;
     animation-timing-function: linear;
     animation-duration: 0.2s;
     box-shadow: -5px 5px 1.5px 0px var(--pinky-color);
 }
+
 @keyframes navButtonActive {
-    0% {box-shadow: -5px 5px 1.5px 0px var(--pinky-color);}
-    25% {box-shadow: -4px 4px 1.5px 0px var(--pinky-color);}
-    50% {box-shadow: -3px 3px 1.5px 0px var(--pinky-color);}
-    75% {box-shadow: -2px 2px 1.5px 0px var(--pinky-color);}
-    100% {box-shadow: none;}
+    0% {
+        box-shadow: -5px 5px 1.5px 0px var(--pinky-color);
+    }
+
+    25% {
+        box-shadow: -4px 4px 1.5px 0px var(--pinky-color);
+    }
+
+    50% {
+        box-shadow: -3px 3px 1.5px 0px var(--pinky-color);
+    }
+
+    75% {
+        box-shadow: -2px 2px 1.5px 0px var(--pinky-color);
+    }
+
+    100% {
+        box-shadow: none;
+    }
 }
+
 #navbar a:active {
     color: white;
 }
+
 #navbar a:visited {
-    color:white;
+    color: white;
 }
 
 /* Welcome Section */
@@ -80,21 +112,24 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(
-        360deg,
-        var(--main-color),
-        rgb(216, 194, 252),
-        rgb(51, 51, 51)
-    );
+    background: var(--background-theme);
 }
+
 #welcome-section h1 {
     font-size: 3em;
     font-family: Arial, sans-serif;
     text-shadow: 1.5px 1.5px 1.5px var(--pinky-color);
 }
+
 #welcome-section h4 {
     margin-top: -1em;
     font-size: 1.5em;
+}
+
+@media only screen and (max-width: 600px) {
+    #welcome-section {
+        padding-left: 2em;
+    }
 }
 
 /* Projects Section */
@@ -102,7 +137,7 @@ body {
     width: 100%;
 }
 
-#project-tile {
+.project-tile {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -113,20 +148,37 @@ body {
     padding-left: 3em;
     background-color: var(--main-color);
 }
+
 .project-card {
     text-decoration: none;
-    padding: 1em 1em 1em 1em;
+    padding: 1em;
     margin: 1em;
     border: 1px solid var(--shadow-color);
     border-radius: 15px;
 }
+
 @keyframes project-shadow {
-    0% {box-shadow: -1px 1px 0px 2px var(--shadow-color);}
-    25% {box-shadow: -2px 2px 3px 2px var(--shadow-color);}
-    50% {box-shadow: -3px 3px 6px 2px var(--shadow-color);}
-    75% {box-shadow: -4px 4px 9px 2px var(--shadow-color);}
-    100% {box-shadow: -5px 5px 12px 2px var(--shadow-color);}
+    0% {
+        box-shadow: -1px 1px 0px 2px var(--shadow-color);
+    }
+
+    25% {
+        box-shadow: -2px 2px 3px 2px var(--shadow-color);
+    }
+
+    50% {
+        box-shadow: -3px 3px 6px 2px var(--shadow-color);
+    }
+
+    75% {
+        box-shadow: -4px 4px 9px 2px var(--shadow-color);
+    }
+
+    100% {
+        box-shadow: -5px 5px 12px 2px var(--shadow-color);
+    }
 }
+
 .project-card:hover {
     animation-name: project-shadow;
     animation-timing-function: linear;
@@ -134,6 +186,97 @@ body {
     box-shadow: -5px 5px 12px 2px var(--shadow-color);
 }
 
+.project-card:active {
+    background-color: var(--nav-background);
+    color: white;
+}
+
+.project-card:visited {
+    color: black;
+}
 
 /* Contacts Section */
+#contacts {
+    width: 0% auto;
+    height: 100vh;
+    background: linear-gradient(360deg,
+            rgb(51, 51, 51),
+            rgb(216, 194, 252),
+            var(--main-color));
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3em;
+}
+
+#contacts a {
+    margin: 2em;
+    /* border: 1px solid black; */
+    border-radius: 15px;
+    padding: 0.5em;
+    text-decoration: none;
+    color: black;
+}
+
+#contacts #email {
+    color: rgb(199, 22, 16);
+}
+
+#contacts #email:hover {
+    background-color: rgb(199, 22, 16);
+    color: white;
+}
+
+#contacts #profile-link:hover {
+    background-color: black;
+    color: white;
+}
+
+#contacts #codepen:hover {
+    background-color: black;
+    color: white;
+}
+
+#contacts #facebook {
+    color: rgb(66 103 178);
+}
+
+#contacts #facebook:hover {
+    background-color: rgb(66 103 178);
+    color: white;
+}
+
+#contacts #instagram:hover {
+    background: linear-gradient(75deg,
+            #F6BA00,
+            #FF8820,
+            #FF5341,
+            #EA0C5F,
+            #C0007A,
+            #82008F,
+            #002296);
+    color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    #contacts {
+        display: flex;
+        flex-flow: column;
+    }
+}
+
 /* Footer section */
+footer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: var(--nav-background);
+    /* border: 1px solid white; */
+}
+
+footer p {
+    color: white;
+    padding: 1em;
+}

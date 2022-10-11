@@ -12,7 +12,7 @@ function createListElement(repo) {
 }
 
 async function loadRepos() {
-    const list = document.querySelector('#project-tile');
+    const list = document.querySelector('.project-tile');
     const repos = await getRepos();
     repos.forEach((repo) => list.appendChild(createListElement(repo)));
 }
